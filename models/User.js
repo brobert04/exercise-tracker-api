@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
-const { Exercise } = require('./Exercise'); 
+const Exercise  = require('./Exercise'); 
 
 const name = 'User';
 
@@ -9,10 +9,7 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    log: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Exercise'
-    }], 
+    log: [Exercise.schema], 
     count: {
         type: Number,
         default: 0
